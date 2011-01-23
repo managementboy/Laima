@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<mythuitheme>
+  <!-- here you will find the OSD of the Laima Theme-->
+  <!-- The popup/notification text area. -->
+  <window name="osd_message">
+    <area>0,0,1680,1050</area>
+    <shape name="background">
+      <area>0,0,100%,100</area>
+      <fill color="#ffffff" alpha="255" />
+    </shape>
+    <textarea name="message_text" from="basicbuttontext">
+      <area>5,5,90%,100</area>
+      <font>menufontmedium</font>
+      <multiline>yes</multiline>
+      <align>left</align>
+    </textarea>
+  </window>
+  
+  <!--The channel number/text input text area-->
+  <window name="osd_input">
+    <area>0,0,1680,1050</area>
+    <shape name="background">
+      <area>0,0,100%,100</area>
+      <fill color="#ffffff" alpha="255" />
+    </shape>
+    <textarea name="osd_number_entry" from="basicbuttontext">
+      <area>5,5,90%,100</area>
+      <font>menufontmedium</font>
+      <multiline>yes</multiline>
+      <align>left</align>
+    </textarea>
+  </window>
+  
+  <window name="program_info">
+    <area>0,900,1680,1050</area>
+    <shape name="background">
+      <area>0,0,1680,150</area>
+      <fill color="#b3b3b3" alpha="255" />
+    </shape>
+    
+    <textarea name="title" from="basicbuttontext">
+      <area>5,5,870,120</area>
+      <font>menufontmedium</font>
+      <multiline>yes</multiline>
+      <align>left</align>
+    </textarea>
+    
+    <textarea name="subtitle">
+      <area>5,110,870,40</area>
+      <font>menufontsmall</font>
+      <cutdown>yes</cutdown> 
+      <multiline>yes</multiline>
+    </textarea>
+    
+    <!--  The little screenshot/preview of the recording -->
+    <imagetype name="iconpath">
+      <area>1515,5,140,140</area>
+    </imagetype>
+    
+    <!--  The description field, that in this case fuses subtitle + rating + description into one -->
+    <textarea name="description">
+      <font>basicdescription</font>
+      <area>880,5,630,140</area>	
+      <multiline>yes</multiline>
+      <cutdown>yes</cutdown>
+      <template>%DESCRIPTION| %(%YEAR|, %%LENMINS%)</template>
+    </textarea>  
+  </window>
+  
+  <!--  the progressbar of the current show -->
+  <window name="osd_status">
+    <area>0,950,1680,100</area>
+    <progressbar name="position" from="basicprogressbar">
+      <position>0,2</position>
+    </progressbar>
+    
+    <textarea name="description" >
+      <area>0,0,1670,50</area>
+      <font>progressfont</font>
+      <template>%DESCRIPTION% %VALUE%%UNITS%</template>
+      <align>center,bottom</align>
+    </textarea>
+  </window>
+  
+  <!-- the Menu -->
+  <window name="MythPopupBox">
+    <area>-1,-1,800,800</area>
+    <shape name="popupbg">
+      <area>0,0,800,800</area>
+      <fill color="#b3b3b3" alpha="255" />
+    </shape>
+    <shape name="popupbg2">
+      <area>5,5,790,790</area>
+      <fill color="#ffffff" alpha="255" />
+    </shape>
+    <textarea name="messagearea" from="basicmessagearea" />
+    <buttonlist name="list" from="basicpopuplist" />
+  </window>
+</mythuitheme>
