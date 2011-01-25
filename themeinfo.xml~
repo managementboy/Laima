@@ -22,6 +22,6 @@
     <thumbnail name="preview">preview.jpg</thumbnail>
     <description>An extremely light weight theme.</description>
     <!-- What is not available -->
-    <errata>Requires Microsoft webdings font, not included (http://corefonts.sourceforge.net/).</errata>
+    <errata>Requires Microsoft webdings font, not included.</errata>
   </detail>
 </themeinfo>

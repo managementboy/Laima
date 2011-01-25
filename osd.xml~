@@ -75,16 +75,11 @@
       <position>0,2</position>
     </progressbar>
     
-    <clock name="clock">
-      <area>10,0,1670,50</area>
-      <font>progressfont</font>
-      <format>%TIME%</format>
-    </clock>
     
     <textarea name="description" >
       <area>0,0,1680,50</area>
       <font>progressfont</font>
-      <template>%DESCRIPTION% %VALUE%%UNITS%</template>
+      <template>%TIME% %DESCRIPTION% %VALUE%%UNITS%</template>
       <align>center</align>
     </textarea>
   </window>

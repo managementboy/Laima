@@ -3,7 +3,8 @@
 <mythuitheme>
   <!--  This XML file defines the Window that enables the user to watch a recorded program.-->
   <window name="watchrecordings">
-
+    
+    
     <!-- shows the groups  -->
     <buttonlist name="groups" from="basichorizontallist">
       <position>0,25</position>

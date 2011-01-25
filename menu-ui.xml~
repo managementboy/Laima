@@ -8,7 +8,7 @@
     <clock name="clock" from="basicclock" />   
     
     <textarea name="pagetitle" from="basictitle">
-      <value></value>
+      <value>"§$%/</value>
       <font>windings</font>
     </textarea>
 
