@@ -39,8 +39,8 @@
   <fontdef name="menufontverrysmallblack" from="menufontverysmall">
     <color>#000000</color>
   </fontdef>
-
-<fontdef name="progressfont" from="menufontmedium">
+  
+  <fontdef name="progressfont" from="menufontmedium">
     <color>#535d6c</color>
   </fontdef>
   
@@ -80,13 +80,13 @@
   <fontdef name="windingstateunselected" from="windingstate">
     <color>#f2f2f2</color>
   </fontdef>
-
+  
   <fontdef name="icons" face="DejaVu Sans">
     <pixelsize>50</pixelsize>
     <color>#000000</color>
   </fontdef>
-
-<!--background without any widgets -->
+  
+  <!--background without any widgets -->
   <imagetype name="basicbackground">
     <area>0,0,1680,1050</area>
     <filename>background.png</filename>
@@ -155,7 +155,7 @@
 	  <area>5,0,100%,150</area> 
 	</textarea>
 	
-
+	
       </state>
       
       <state name="inactive" from="active">
@@ -250,804 +250,932 @@
     
   </buttonlist>
   
-  <!-- messagearea for all popups -->
   
-  <textarea name="basicmessagearea">
+  <textarea name="basicgallerytextarea">
+    <area>0,150,100%,50</area>
     <font>basic</font>
-    <area>20,20,760,260</area>    
-    <multiline>yes</multiline>    
-    <align>top,hcenter</align>    
+    <align>left,vcenter</align>                    
+    <multiline>yes</multiline>
   </textarea>
   
-  
-  <textarea name="basicwindings">
+  <textarea name="basicgallerywindings">
     <font>windingsunselected</font>
-    <area>0,0,750,50</area>    
+    <area>0,0,50,50</area>    
     <align>vcenter,right</align>    
-  </textarea>  
+  </textarea> 
   
-  <!-- the most basic list for popups -->
-  <buttonlist name="basicpopuplist">
+  <buttonlist name="basicgallerylist">
     
-    <area>20,350,760,500</area>
-    <layout>vertical</layout>
-    <arrange>stack</arrange>
-    <buttonarea>0,0,760,500</buttonarea>
+    <area>0,0,1680,1050</area>
     <spacing>5</spacing>
+    <layout>grid</layout>
+<wrapstyle>flowing</wrapstyle>
+    <buttonarea>0,0,100%,100%</buttonarea>
     
     <statetype name="buttonitem">
-      <loadondemand>true</loadondemand>            
+      
       <state name="active">
-	<area>0,0,760,50</area>
+	<area>0,0,300,300</area>
 	<shape name="buttonbg1">
-	  <area>0,0,760,50</area>
+	  <area>0,0,300,300</area>
 	  <fill color="#b3b3b3" alpha="200" />
 	</shape>
 	<shape name="buttonbg2">
-	  <area>5,5,750,40</area>
+	  <area>5,5,390,390</area>
 	  <fill color="#ffffff" alpha="200" />
 	</shape>
-	<textarea name="buttontext" from="basicbuttontextarea"/>
-	  <imagetype name="buttonarrow">
-    <area>5,700,40,40</area>
-    <filename>icons/doublearrowright.png</filename>
-  </imagetype>
-      </state>
-      
-      <state name="selectedactive">
-	<area>0,0,760,50</area>
-	<shape name="background">
-	  <area>0,0,760,50</area>
-	  <fill color="#b3b3b3" alpha="200" />
-	</shape>
-	<textarea name="buttontext" from="basicbuttontextarea">
-	  <font>basicwhite</font>
-	</textarea>
-	  <imagetype name="buttonarrow">
-    <area>5,700,40,40</area>
-    <filename>icons/doublearrowright.png</filename>
-  </imagetype>
-      </state>
-      
-      <state name="inactive" from="active">
-	<shape name="background">
-	  <alpha>100</alpha>
-	</shape>
-	
-	<textarea name="buttontext">
-	  <alpha>100</alpha>
-	</textarea>
-	<imagetype name="buttonarrow">
-	  <alpha>100</alpha>	  
+	<imagetype name="buttonimage">
+	  <area>0,0,300,300</area>
+	  <filename>
+	  </filename>
+	  <preserveaspect>true</preserveaspect>
 	</imagetype>
-      </state>
-      
-      <state name="selectedinactive" from="selectedactive">
 	
 	<shape name="background">
-	  <alpha>100</alpha>
+	  <area>0,250,300,50</area>
+	  <fill color="#b3b3b3" alpha="50" />
 	</shape>	
-	<textarea name="buttontext">
-	  <alpha>100</alpha>
+	<textarea name="buttontext" from="basicgallerytextarea"/>
+	<textarea name="childcount" from="basicgallerytextarea">
+	  <align>vcenter,right</align>
 	</textarea>
-	<imagetype name="buttonarrow">
-	  <alpha>100</alpha>	  
-	</imagetype>	
-      </state>
-    </statetype>
-  </buttonlist>
-  
-  
-  
-  <!-- Base definition of a popup button -->
-  
-  <button name="basepopupbutton">
-    
-    <area>0,0,760,50</area>
-    
-    <statetype name="buttonstate">
-      <loadondemand>true</loadondemand>            
-      
-      <state name="active">
-	<area>0,0,760,50</area>
-	<shape name="buttonbg1">
-	  <area>0,0,760,50</area>
-	  <fill color="#b3b3b3" alpha="200" />
-	</shape>
-	<shape name="buttonbg2">
-	  <area>5,5,750,40</area>
-	  <fill color="#ffffff" alpha="200" />
-	</shape>
-	<textarea name="text" from="basicbuttontextarea"/>
-	<textarea name="buttonarrow" from="basicwindings">
-	  <value>8</value>
-	  <font>windings</font>
-	</textarea>
+	<statetype name="nodetype">
+	  <area>250,250,50,50</area>
+	  <state name="subfolder">
+	    <textarea name="icon" from="basicgallerywindings">
+	      <value></value>
+	    </textarea>
+	  </state>
+	  <state name="upfolder">
+	    <textarea name="icon" from="basicgallerywindings">
+	      <value></value>
+	    </textarea>
+	  </state>
+	</statetype>
       </state>
       
-      <state name="selected">
-	<area>0,0,760,50</area>
+      <state name="selectedactive">	
+	
+	<area>0,0,300,300</area>
 	<shape name="background">
-	  <area>0,0,760,50</area>
+	  <area>0,0,300,300</area>
 	  <fill color="#b3b3b3" alpha="200" />
 	</shape>
-	<textarea name="text" from="basicbuttontextarea">
+	
+	<imagetype name="buttonimage">
+	  <area>0,0,300,300</area>
+	  <filename>
+	  </filename>
+	  <preserveaspect>true</preserveaspect>
+	</imagetype>
+	
+	<shape name="background">
+	  <area>0,250,300,50</area>
+	  <fill color="#b3b3b3" alpha="50" />
+	</shape>	
+	<textarea name="buttontext" from="basicgallerytextarea">
 	  <font>basicwhite</font>
 	</textarea>
-	<textarea name="buttonarrow" from="basicwindings">
-	  <value>8</value>
+	
+	<textarea name="childcount" from="basicgallerytextarea">
+	  <align>vcenter,right</align>
 	</textarea>
+	<statetype name="nodetype">
+	  <area>250,250,50,50</area>
+	  <state name="subfolder">
+	    <textarea name="icon" from="basicgallerywindings">
+	      <value></value>
+	    </textarea>
+	  </state>
+	  <state name="upfolder">
+	    <textarea name="icon" from="basicgallerywindings">
+	      <value></value>
+	    </textarea>
+	  </state>
+	</statetype>
+	<statetype name="buttoncheck">
+	  
+	</statetype>
+	
       </state>
-      
-      <state name="pushed" from="selected">
-	<area>0,0,760,50</area>
-	<shape name="background">
-	  <fill color="#b3b3b3" alpha="255" />
-	</shape>
-      </state>
-      
-      <state name="inactive" from="active">
-	<shape name="buttonbg1">
-	  <alpha>100</alpha>
-	</shape>
-	<shape name="buttonbg2">
-	  <alpha>100</alpha>
-	</shape>
-	<textarea name="text">
-	  <alpha>100</alpha>
-	</textarea>
-		<textarea name="buttonarrow">
-	  <alpha>100</alpha>
-	</textarea>
-      </state>
-      
-    </statetype>
-  </button>
-  
-  
-  <button name="basepopupbuttonsave" from="basepopupbutton">
-    
-    <area>0,0,760,50</area>
-    
-    <statetype name="buttonstate">
-      <loadondemand>true</loadondemand>            
-      
-      <state name="active">
-	<!-- icon is a diskette -->
-	<textarea name="buttonarrow" from="basicwindings">
-	  <position>0,3</position>
-	  <value></value>
-	  <font>windings</font>
-	</textarea>
-      </state>
-      
-      <state name="selected">
-	<textarea name="buttonarrow" from="basicwindings">
-	  <value></value>
-	  <position>0,3</position>
-	</textarea>
-      </state>
-      
-    </statetype>
-  </button>
-  
-  
-  
-  
-  
-  <!-- Popup Dialogue Box -->
-  
-  <window name="MythPopupBox">
-    
-    <area>-1,-1,800,800</area>
-    <shape name="popupbg">
-      <area>0,0,800,800</area>
-      <fill color="#b3b3b3" alpha="230" />
-    </shape>
-    <shape name="popupbg2">
-      <area>5,5,790,790</area>
-      <fill color="#ffffff" alpha="230" />
-    </shape>
-    <textarea name="messagearea" from="basicmessagearea" />
-    <buttonlist name="list" from="basicpopuplist" />
-    
-  </window>
-  
-  <!-- Base definition of a ratingsystem -->
-  <statetype name="baserating">
-    <area>0,0,160,32</area>
-    <state name="0">
-    </state>
-    <state name="1">
-      <imagetype name="stars1">
-	<area>0,0,32,32</area>
-	<filename>icons/star-half.png</filename>
-      </imagetype>
-    </state>
-    <state name="2">
-      <imagetype name="stars1">
-	<area>0,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-    </state>
-    <state name="3">
-      <imagetype name="stars1">
-	<area>0,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars2">
-	<area>32,0,32,32</area>
-	<filename>icons/star-half.png</filename>
-      </imagetype>
-    </state>
-    <state name="4">
-      <imagetype name="stars1">
-	<area>0,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars2">
-	<area>32,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-    </state>
-    <state name="5">
-      <imagetype name="stars1">
-	<area>0,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars2">
-	<area>32,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars3">
-	<area>64,0,32,32</area>
-	<filename>icons/star-half.png</filename>
-      </imagetype>
-    </state>
-    <state name="6">
-      <imagetype name="stars1">
-	<area>0,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars2">
-	<area>32,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars3">
-	<area>64,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-    </state>
-    <state name="7">
-      <imagetype name="stars1">
-	<area>0,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars2">
-	<area>32,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars3">
-	<area>64,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars4">
-	<area>96,0,32,32</area>
-	<filename>icons/star-half.png</filename>
-      </imagetype>
-    </state>
-    <state name="8">
-      <imagetype name="stars1">
-	<area>0,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars2">
-	<area>32,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars3">
-	<area>64,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars4">
-	<area>96,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-    </state>
-    <state name="9">
-      <imagetype name="stars1">
-	<area>0,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars2">
-	<area>32,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars3">
-	<area>64,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars4">
-	<area>96,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars5">
-	<area>128,0,32,32</area>
-	<filename>icons/star-half.png</filename>
-      </imagetype>
-    </state>
-    <state name="10">
-      <imagetype name="stars1">
-	<area>0,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars2">
-	<area>32,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars3">
-	<area>64,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars4">
-	<area>96,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-      <imagetype name="stars5">
-	<area>128,0,32,32</area>
-	<filename>icons/star-full.png</filename>
-      </imagetype>
-    </state>
-  </statetype>
-  
-  <!-- this bar shows the progress of for example the OSD -->
-  <progressbar name="basicprogressbar">
-    <area>0,0,1680,50</area>
-    <layout>horizontal</layout>
-    <style>reveal</style>
-    
-    <shape name="background">
-      <area>0,0,100%,100%</area>
-      <fill color="#b3b3b3" alpha="230" />
-    </shape>
-    
-    <shape name="progressimage">
-      <area>0,0,100%,100%</area>
-      <fill color="#ffffff" alpha="200" />
-    </shape>
-  </progressbar>
-  
-  
-  <!-- all the states -->
-  
-  <textarea name="basicwindingsstate">
-    <font>windingstate</font>
-    <area>0,0,50,50</area>    
-    <align>allcenter</align>    
-  </textarea>   
 
-  <textarea name="basicicons" from="basicwindingsstate">
-    <font>icons</font> 
-  </textarea>   
-
-  <!--  This show is being recorded at this time  -->
-  
-  <statetype name="basicjobstate">
-    <area>0,0,100%,100%</area>
-    <!--  This show is being recorded at this time  -->
-    <state name="recording">
-      <area>0,0,100%,100%</area>
-      <textarea name="diskette" from="basicwindingsstate">
-	<value></value>
-      </textarea>
+    
+    <state name="inactive" from="active">
+      <shape name="background">
+	<alpha>150</alpha>	  
+      </shape>
     </state>
     
-    <!--  This show is being transcoded  -->
-    <state name="transcoding">
-      <area>0,0,100%,100%</area>
-      <textarea name="zipper" from="basicwindingsstate">
-	<value></value>
-      </textarea>
-    </state>
-  </statetype>               
-  
-  <!--  icon if a recording is marked preserved	  -->  
-  <statetype name="basicbookmarkstate">
-    <area>0,0,100%,100%</area>
-    <state name="yes">
-      <area>0,0,100%,100%</area>
-      <textarea name="bookmark" from="basicwindingsstate">
-	<value>§</value>
-      </textarea>
-    </state>
-    <state name="no">
-      <area>0,0,100%,100%</area>
-      <textarea name="bookmark" from="basicwindingsstate">
-	<value>§</value>
-	<alpha>50</alpha>
-      </textarea>
-    </state>
-  </statetype>
-  
-  <!--  icon if a recording is marked preserved	  -->  
-  <statetype name="basicprocessingstate">
-    <area>0,0,100%,100%</area>
-    <state name="yes">
-      <area>0,0,100%,100%</area>
-      <textarea name="processing1" from="basicwindingsstate">
-	<value>i</value>
-      </textarea>
-    </state>
-    <state name="no">
-      <area>0,0,100%,100%</area>
-      <textarea name="processing2" from="basicwindingsstate">
-	<value>i</value>
-	<alpha>50</alpha>
-      </textarea>
-    </state>
-  </statetype>
-  
-  <!--  icon if a recording is marked preserved	  -->  
-  <statetype name="basiccommflaggedstate">
-    <area>0,0,100%,100%</area>
-    <state name="yes">
-      <area>0,0,100%,100%</area>
-      <textarea name="commflagged" from="basicwindingsstate">
-	<value></value>
+    <state name="selectedinactive" from="selectedactive">
+      <shape name="background">
 	<alpha>150</alpha>
-      </textarea>
-      <textarea name="stop" from="basicwindingsstate">
-	<value></value>
-	
-      </textarea>
+      </shape>
     </state>
-    <state name="no">
-      <area>0,0,100%,100%</area>
-      <textarea name="commflagged" from="basicwindingsstate">
-	<value></value>
-	<alpha>50</alpha>
-      </textarea>
-    </state>
+    
   </statetype>
   
-  <!--  icon if a recording is marked preserved	  -->  
-  <statetype name="basicautoexpirestate">
-    <area>0,0,100%,100%</area>
-    <state name="yes">
-      <area>0,0,100%,100%</area>
-      <textarea name="autoexpire" from="basicwindingsstate">
-	<value></value>
-      </textarea>
-    </state>
-    <state name="no">
-      <area>0,0,100%,100%</area>
-      <textarea name="autoexpire" from="basicwindingsstate">
-	<value></value>
-	<alpha>50</alpha>
-      </textarea>
-    </state>
-  </statetype>
-  
-  <!--  icon if a recording is marked preserved	  -->  
-  <statetype name="basicinusestate">
-    <area>0,0,100%,100%</area>
-    <state name="yes">
-      <area>0,0,100%,100%</area>
-      <textarea name="inuse1" from="basicwindingsstate">
-	<value>+</value>
-      </textarea>
-    </state>
-    <state name="no">
-      <area>0,0,100%,100%</area>
-      <textarea name="inuse2" from="basicwindingsstate">
-	<value>+</value>
-	<alpha>50</alpha>
-      </textarea>
-    </state>
-  </statetype>
-
-  <!--  does the recording have a cutlist	  -->  
-  <statetype name="basiccutliststate">
-    <area>0,0,100%,100%</area>
-    <state name="yes">
-      <area>0,0,100%,100%</area>
-      <textarea name="cutlist1" from="basicicons">
-	<value>✁</value>
-      </textarea>
-    </state>
-    <state name="no">
-      <area>0,0,100%,100%</area>
-      <textarea name="cutlist2" from="basicicons">
-	<value>✁</value>
-	<alpha>50</alpha>
-      </textarea>
-    </state>
-  </statetype>
+</buttonlist>
 
 
 
-  <!--  icon if a recording is marked preserved	  -->  
-  <statetype name="basicwatchedstate">
-    <area>0,0,100%,100%</area>
-    <state name="yes">
-      <area>0,0,100%,100%</area>
-      <textarea name="eye" from="basicwindingsstate">
-	<value>N</value>
-      </textarea>
-    </state>
-    <state name="no">
-      <area>0,0,100%,100%</area>
-      <textarea name="eye" from="basicwindingsstate">
-	<alpha>50</alpha>
-	<value>N</value>
-      </textarea>
-    </state>
-  </statetype>
-  
-  <textarea name="basicchannels">
-    <font>menufontverysmall</font>
-    <area>0,0,50,50</area>    
-    <align>allcenter</align>    
-  </textarea>  
-  
-  <!--  The type of sound in the recording  -->  
-  <statetype name="basicaudioprops">
-    <area>0,0,100%,100%</area>
-    <state name="mono">
-      <area>0,0,100%,100%</area>
-      <textarea name="speaker" from="basicwindingsstate">
-	<value></value>
-      </textarea>
-      <textarea name="channels" from="basicchannels">
-	<value>1</value>
-      </textarea>
-    </state>
-    <state name="stereo">
-      <textarea name="speaker" from="basicwindingsstate">
-	<value></value>
-      </textarea>
-      <textarea name="channels" from="basicchannels">
-	<value>2</value>
-      </textarea>
-    </state>
-    <state name="surround">
-      <textarea name="speaker" from="basicwindingsstate">
-	<value></value>
-      </textarea>
-      <textarea name="channels" from="basicchannels">
-	<value>5.1</value>
-      </textarea>
-    </state>
-    <state name="dolby">
-      <textarea name="speaker" from="basicwindingsstate">
-	<value></value>
-      </textarea>
-      <textarea name="channels" from="basicchannels">
-	<value>DD</value>
-      </textarea>
-    </state>
-    <state name="default">
-      <textarea name="speaker" from="basicwindingsstate">
-	<alpha>50</alpha>
-	<value></value>
-      </textarea>
-    </state>
-  </statetype>
-  
-  
-  <textarea name="basicsubtitles" from="basicchannels">
-    <area>0,0,50,40</area>    
-  </textarea>  
-  <!--  icon if a recording will be deleted when needed	  -->  
-  <statetype name="basicsubtitletypes">
-    <state name="cc">
-      <textarea name="bubble" from="basicwindingsstate">
-	<value></value>
-      </textarea>
-      <textarea name="type" from="basicsubtitles">
-	<value>CC</value>
-      </textarea>
-    </state>
-    <state name="subtitles">
-      <textarea name="bubble" from="basicwindingsstate">
-	<value></value>
-      </textarea>
-    </state>
-    <state name="onscreensubs">
-      <textarea name="bubble" from="basicwindingsstate">
-	<value></value>
-      </textarea>
-      <textarea name="type" from="basicsubtitles">
-	<value>!!!</value>
-      </textarea>
-    </state>
-    <state name="default">
-      <textarea name="bubble" from="basicwindingsstate">
-	<alpha>50</alpha>
-	<value></value>
-      </textarea>
-    </state>
-  </statetype>
-  
-  <textarea name="basicvideo" from="basicchannels">
-    <area>0,3,50,50</area>
-    <align>bottom,hcenter</align>
-    <font>menufontverrysmallblack</font>
-  </textarea>  
-  
-  <!--  The type of sound in the recording  -->  
-  <statetype name="basicvideoprops">
-    <state name="hdtv">
-      <textarea name="film" from="basicwindingsstate">
-	<value></value>
-      </textarea>
-      <textarea name="type" from="basicvideo">
-	<value>HDTV</value>
-      </textarea>
-    </state>
-    <state name="widescreen">
-      <textarea name="film" from="basicwindingsstate">
-	<value></value>
-      </textarea>
-      <textarea name="type" from="basicvideo">
-	<value>wide</value>
-      </textarea>
-    </state>
-    <state name="avchd">
-      <textarea name="film" from="basicwindingsstate">
-	<value></value>
-      </textarea>
-      <textarea name="type" from="basicvideo">
-	<value>avchd</value>
-      </textarea>
-    </state>
-    <state name="hd720">
-      <textarea name="film" from="basicwindingsstate">
-	<value></value>
-      </textarea>
-      <textarea name="type" from="basicvideo">
-	<value>720</value>
-      </textarea>
-    </state>
-    <state name="hd1080">
-      <textarea name="film" from="basicwindingsstate">
-	<value></value>
-      </textarea>
-      <textarea name="type" from="basicvideo">
-	<value>1080</value>
-      </textarea>
-    </state>
-    <state name="default">
-      <textarea name="film" from="basicwindingsstate">
-	<value></value>
-	<alpha>50</alpha>
-      </textarea>
-    </state>
-  </statetype>
-  
-  
-  <!-- end of all states-->
-  
-  <!-- Round please Wait pie -->
-  
-  <window name="MythBusyDialog">
-    <area>-1,-1,800,260</area>
-    <shape name="popupbg">
-      <area>0,0,800,260</area>
-      <fill color="#b3b3b3" alpha="200" />
-    </shape>
-    <shape name="popupbg2">
-      <area>5,5,790,250</area>
-      <fill color="#ffffff" alpha="200" />
-    </shape>
-    <textarea name="message" from="basicmessagearea">
-      <font>progressfont</font>
-    </textarea>
-  </window>
+
+ <!-- messagearea for all popups -->
  
-  
-  <window name="MythProgressDialog">
-    <area>-1,-1,800,260</area>
-    <shape name="popupbg">
-      <area>0,0,800,260</area>
-      <fill color="#b3b3b3" alpha="200" />
-    </shape>
-    <shape name="popupbg2">
-      <area>5,5,790,250</area>
-      <fill color="#ffffff" alpha="200" />
-    </shape>
-    <textarea name="message" from="basicmessagearea">
-      <font>progressfont</font>
-    </textarea>
-    <progressbar name="progressbar" from="basicprogressbar">
-      <position>0,2</position>
-    </progressbar>
-    
-    <textarea name="progresstext" >
-      <area>0,0,1670,50</area>
-      <font>progressfont</font>
-      <template>%DESCRIPTION% %VALUE%%UNITS%</template>
-      <align>center,bottom</align>
-    </textarea>
-  </window>
-  
-  <window name="videowindow">
-    <area>-1,-1,800,260</area>
-    <shape name="popupbg">
-      <area>0,0,800,260</area>
-      <fill color="#b3b3b3" alpha="200" />
-    </shape>
-    <shape name="popupbg2">
-      <area>5,5,790,250</area>
-      <fill color="#ffffff" alpha="200" />
-    </shape>
-    <textarea name="title" from="basicmessagearea">
-      <font>progressfont</font>
-      <value>Playback starting ...</value>
-    </textarea>
-  </window>
-  
-  
-  <!--Checkboxes -->
-  
-  <checkbox name="basiccheckbox">
-    
-    <area>0,0,50,50</area>
-    <statetype name="background">
-      <loadondemand>true</loadondemand>            
-      <state name="active">
-	<area>0,0,100%,100%</area>
-	<shape name="buttonbg1">
-	  <area>0,0,100%,100%</area>
-	  <fill color="#b3b3b3" alpha="200" />
-	</shape>
-	<shape name="buttonbg2">
-	  <area>5,5,40,40</area>
-	  <fill color="#ffffff" alpha="200" />
-	</shape>
-	
-      </state>
-      
-      <state name="selected">
-	<area>0,0,100%,100%</area>
-	<shape name="background">
-	  <area>0,0,100%,100%</area>
-	  <fill color="#b3b3b3" alpha="200" />
-	</shape>
-      </state>
-      <state name="inactive" from="active">
-	<shape name="buttonbg1">
-	  <alpha>100</alpha>
-	</shape>
-	<shape name="buttonbg2">
-	  <alpha>100</alpha>
-	</shape>
-      </state>
-      
-      <state name="disabled" />
-    </statetype>
-    
-    <statetype name="checkstate">
-      <area>0,0,100%,100%</area>
-      <state type="off" />
-      
-      <state type="half">
-	<area>0,0,100%,100%</area>
-	<textarea name="check" from="basicwindingsstate">
-	  <value>a</value>
-	  <alpha>180</alpha>
-	</textarea>
-      </state>
-      <state type="full">
-	<area>0,0,100%,100%</area>
-	<textarea name="check" from="basicwindingsstate">
-	  <value>a</value>
-	</textarea>
-      </state>
-      
-    </statetype>
-  </checkbox>
-  
-  
+ <textarea name="basicmessagearea">
+   <font>basic</font>
+   <area>20,20,760,260</area>    
+   <multiline>yes</multiline>    
+   <align>top,hcenter</align>    
+ </textarea>
+ 
+ 
+ <textarea name="basicwindings">
+   <font>windingsunselected</font>
+   <area>0,0,750,50</area>    
+   <align>vcenter,right</align>    
+ </textarea>  
+ 
+ <!-- the most basic list for popups -->
+ <buttonlist name="basicpopuplist">
+   
+   <area>20,350,760,500</area>
+   <layout>vertical</layout>
+   <arrange>stack</arrange>
+   <buttonarea>0,0,760,500</buttonarea>
+   <spacing>5</spacing>
+   
+   <statetype name="buttonitem">
+     <loadondemand>true</loadondemand>            
+     <state name="active">
+       <area>0,0,760,50</area>
+       <shape name="buttonbg1">
+	 <area>0,0,760,50</area>
+	 <fill color="#b3b3b3" alpha="200" />
+       </shape>
+       <shape name="buttonbg2">
+	 <area>5,5,750,40</area>
+	 <fill color="#ffffff" alpha="200" />
+       </shape>
+       <textarea name="buttontext" from="basicbuttontextarea"/>
+       <imagetype name="buttonarrow">
+	 <area>5,700,40,40</area>
+	 <filename>icons/doublearrowright.png</filename>
+       </imagetype>
+     </state>
+     
+     <state name="selectedactive">
+       <area>0,0,760,50</area>
+       <shape name="background">
+	 <area>0,0,760,50</area>
+	 <fill color="#b3b3b3" alpha="200" />
+       </shape>
+       <textarea name="buttontext" from="basicbuttontextarea">
+	 <font>basicwhite</font>
+       </textarea>
+       <imagetype name="buttonarrow">
+	 <area>5,700,40,40</area>
+	 <filename>icons/doublearrowright.png</filename>
+       </imagetype>
+     </state>
+     
+     <state name="inactive" from="active">
+       <shape name="background">
+	 <alpha>100</alpha>
+       </shape>
+       
+       <textarea name="buttontext">
+	 <alpha>100</alpha>
+       </textarea>
+       <imagetype name="buttonarrow">
+	 <alpha>100</alpha>	  
+       </imagetype>
+     </state>
+     
+     <state name="selectedinactive" from="selectedactive">
+       
+       <shape name="background">
+	 <alpha>100</alpha>
+       </shape>	
+       <textarea name="buttontext">
+	 <alpha>100</alpha>
+       </textarea>
+       <imagetype name="buttonarrow">
+	 <alpha>100</alpha>	  
+       </imagetype>	
+     </state>
+   </statetype>
+ </buttonlist>
+ 
+ 
+ 
+ <!-- Base definition of a popup button -->
+ 
+ <button name="basepopupbutton">
+   
+   <area>0,0,760,50</area>
+   
+   <statetype name="buttonstate">
+     <loadondemand>true</loadondemand>            
+     
+     <state name="active">
+       <area>0,0,760,50</area>
+       <shape name="buttonbg1">
+	 <area>0,0,760,50</area>
+	 <fill color="#b3b3b3" alpha="200" />
+       </shape>
+       <shape name="buttonbg2">
+	 <area>5,5,750,40</area>
+	 <fill color="#ffffff" alpha="200" />
+       </shape>
+       <textarea name="text" from="basicbuttontextarea"/>
+       <textarea name="buttonarrow" from="basicwindings">
+	 <value>8</value>
+	 <font>windings</font>
+       </textarea>
+     </state>
+     
+     <state name="selected">
+       <area>0,0,760,50</area>
+       <shape name="background">
+	 <area>0,0,760,50</area>
+	 <fill color="#b3b3b3" alpha="200" />
+       </shape>
+       <textarea name="text" from="basicbuttontextarea">
+	 <font>basicwhite</font>
+       </textarea>
+       <textarea name="buttonarrow" from="basicwindings">
+	 <value>8</value>
+       </textarea>
+     </state>
+     
+     <state name="pushed" from="selected">
+       <area>0,0,760,50</area>
+       <shape name="background">
+	 <fill color="#b3b3b3" alpha="255" />
+       </shape>
+     </state>
+     
+     <state name="inactive" from="active">
+       <shape name="buttonbg1">
+	 <alpha>100</alpha>
+       </shape>
+       <shape name="buttonbg2">
+	 <alpha>100</alpha>
+       </shape>
+       <textarea name="text">
+	 <alpha>100</alpha>
+       </textarea>
+       <textarea name="buttonarrow">
+	 <alpha>100</alpha>
+       </textarea>
+     </state>
+     
+   </statetype>
+ </button>
+ 
+ 
+ <button name="basepopupbuttonsave" from="basepopupbutton">
+   
+   <area>0,0,760,50</area>
+   
+   <statetype name="buttonstate">
+     <loadondemand>true</loadondemand>            
+     
+     <state name="active">
+       <!-- icon is a diskette -->
+       <textarea name="buttonarrow" from="basicwindings">
+	 <position>0,3</position>
+	 <value></value>
+	 <font>windings</font>
+       </textarea>
+     </state>
+     
+     <state name="selected">
+       <textarea name="buttonarrow" from="basicwindings">
+	 <value></value>
+	 <position>0,3</position>
+       </textarea>
+     </state>
+     
+   </statetype>
+ </button>
+ 
+ 
+ 
+ 
+ 
+ <!-- Popup Dialogue Box -->
+ 
+ <window name="MythPopupBox">
+   
+   <area>-1,-1,800,800</area>
+   <shape name="popupbg">
+     <area>0,0,800,800</area>
+     <fill color="#b3b3b3" alpha="230" />
+   </shape>
+   <shape name="popupbg2">
+     <area>5,5,790,790</area>
+     <fill color="#ffffff" alpha="230" />
+   </shape>
+   <textarea name="messagearea" from="basicmessagearea" />
+   <buttonlist name="list" from="basicpopuplist" />
+   
+ </window>
+ 
+ <!-- Base definition of a ratingsystem -->
+ <statetype name="baserating">
+   <area>0,0,160,32</area>
+   <state name="0">
+   </state>
+   <state name="1">
+     <imagetype name="stars1">
+       <area>0,0,32,32</area>
+       <filename>icons/star-half.png</filename>
+     </imagetype>
+   </state>
+   <state name="2">
+     <imagetype name="stars1">
+       <area>0,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+   </state>
+   <state name="3">
+     <imagetype name="stars1">
+       <area>0,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars2">
+       <area>32,0,32,32</area>
+       <filename>icons/star-half.png</filename>
+     </imagetype>
+   </state>
+   <state name="4">
+     <imagetype name="stars1">
+       <area>0,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars2">
+       <area>32,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+   </state>
+   <state name="5">
+     <imagetype name="stars1">
+       <area>0,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars2">
+       <area>32,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars3">
+       <area>64,0,32,32</area>
+       <filename>icons/star-half.png</filename>
+     </imagetype>
+   </state>
+   <state name="6">
+     <imagetype name="stars1">
+       <area>0,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars2">
+       <area>32,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars3">
+       <area>64,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+   </state>
+   <state name="7">
+     <imagetype name="stars1">
+       <area>0,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars2">
+       <area>32,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars3">
+       <area>64,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars4">
+       <area>96,0,32,32</area>
+       <filename>icons/star-half.png</filename>
+     </imagetype>
+   </state>
+   <state name="8">
+     <imagetype name="stars1">
+       <area>0,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars2">
+       <area>32,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars3">
+       <area>64,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars4">
+       <area>96,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+   </state>
+   <state name="9">
+     <imagetype name="stars1">
+       <area>0,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars2">
+       <area>32,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars3">
+       <area>64,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars4">
+       <area>96,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars5">
+       <area>128,0,32,32</area>
+       <filename>icons/star-half.png</filename>
+     </imagetype>
+   </state>
+   <state name="10">
+     <imagetype name="stars1">
+       <area>0,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars2">
+       <area>32,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars3">
+       <area>64,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars4">
+       <area>96,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+     <imagetype name="stars5">
+       <area>128,0,32,32</area>
+       <filename>icons/star-full.png</filename>
+     </imagetype>
+   </state>
+ </statetype>
+ 
+ <!-- this bar shows the progress of for example the OSD -->
+ <progressbar name="basicprogressbar">
+   <area>0,0,1680,50</area>
+   <layout>horizontal</layout>
+   <style>reveal</style>
+   
+   <shape name="background">
+     <area>0,0,100%,100%</area>
+     <fill color="#b3b3b3" alpha="230" />
+   </shape>
+   
+   <shape name="progressimage">
+     <area>0,0,100%,100%</area>
+     <fill color="#ffffff" alpha="200" />
+   </shape>
+ </progressbar>
+ 
+ 
+ <!-- all the states -->
+ 
+ <textarea name="basicwindingsstate">
+   <font>windingstate</font>
+   <area>0,0,50,50</area>    
+   <align>allcenter</align>    
+ </textarea>   
+ 
+ <textarea name="basicicons" from="basicwindingsstate">
+   <font>icons</font> 
+ </textarea>   
+ 
+ <!--  This show is being recorded at this time  -->
+ 
+ <statetype name="basicjobstate">
+   <area>0,0,100%,100%</area>
+   <!--  This show is being recorded at this time  -->
+   <state name="recording">
+     <area>0,0,100%,100%</area>
+     <textarea name="diskette" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+   </state>
+   
+   <!--  This show is being transcoded  -->
+   <state name="transcoding">
+     <area>0,0,100%,100%</area>
+     <textarea name="zipper" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+   </state>
+ </statetype>               
+ 
+ <!--  icon if a recording is marked preserved	  -->  
+ <statetype name="basicbookmarkstate">
+   <area>0,0,100%,100%</area>
+   <state name="yes">
+     <area>0,0,100%,100%</area>
+     <textarea name="bookmark" from="basicwindingsstate">
+       <value>§</value>
+     </textarea>
+   </state>
+   <state name="no">
+     <area>0,0,100%,100%</area>
+     <textarea name="bookmark" from="basicwindingsstate">
+       <value>§</value>
+       <alpha>50</alpha>
+     </textarea>
+   </state>
+ </statetype>
+ 
+ <!--  icon if a recording is marked preserved	  -->  
+ <statetype name="basicprocessingstate">
+   <area>0,0,100%,100%</area>
+   <state name="yes">
+     <area>0,0,100%,100%</area>
+     <textarea name="processing1" from="basicwindingsstate">
+       <value>i</value>
+     </textarea>
+   </state>
+   <state name="no">
+     <area>0,0,100%,100%</area>
+     <textarea name="processing2" from="basicwindingsstate">
+       <value>i</value>
+       <alpha>50</alpha>
+     </textarea>
+   </state>
+ </statetype>
+ 
+ <!--  icon if a recording is marked preserved	  -->  
+ <statetype name="basiccommflaggedstate">
+   <area>0,0,100%,100%</area>
+   <state name="yes">
+     <area>0,0,100%,100%</area>
+     <textarea name="commflagged" from="basicwindingsstate">
+       <value></value>
+       <alpha>150</alpha>
+     </textarea>
+     <textarea name="stop" from="basicwindingsstate">
+       <value></value>
+       
+     </textarea>
+   </state>
+   <state name="no">
+     <area>0,0,100%,100%</area>
+     <textarea name="commflagged" from="basicwindingsstate">
+       <value></value>
+       <alpha>50</alpha>
+     </textarea>
+   </state>
+ </statetype>
+ 
+ <!--  icon if a recording is marked preserved	  -->  
+ <statetype name="basicautoexpirestate">
+   <area>0,0,100%,100%</area>
+   <state name="yes">
+     <area>0,0,100%,100%</area>
+     <textarea name="autoexpire" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+   </state>
+   <state name="no">
+     <area>0,0,100%,100%</area>
+     <textarea name="autoexpire" from="basicwindingsstate">
+       <value></value>
+       <alpha>50</alpha>
+     </textarea>
+   </state>
+ </statetype>
+ 
+ <!--  icon if a recording is marked preserved	  -->  
+ <statetype name="basicinusestate">
+   <area>0,0,100%,100%</area>
+   <state name="yes">
+     <area>0,0,100%,100%</area>
+     <textarea name="inuse1" from="basicwindingsstate">
+       <value>+</value>
+     </textarea>
+   </state>
+   <state name="no">
+     <area>0,0,100%,100%</area>
+     <textarea name="inuse2" from="basicwindingsstate">
+       <value>+</value>
+       <alpha>50</alpha>
+     </textarea>
+   </state>
+ </statetype>
+ 
+ <!--  does the recording have a cutlist	  -->  
+ <statetype name="basiccutliststate">
+   <area>0,0,100%,100%</area>
+   <state name="yes">
+     <area>0,0,100%,100%</area>
+     <textarea name="cutlist1" from="basicicons">
+       <value>✁</value>
+     </textarea>
+   </state>
+   <state name="no">
+     <area>0,0,100%,100%</area>
+     <textarea name="cutlist2" from="basicicons">
+       <value>✁</value>
+       <alpha>50</alpha>
+     </textarea>
+   </state>
+ </statetype>
+ 
+ 
+ 
+ <!--  icon if a recording is marked preserved	  -->  
+ <statetype name="basicwatchedstate">
+   <area>0,0,100%,100%</area>
+   <state name="yes">
+     <area>0,0,100%,100%</area>
+     <textarea name="eye" from="basicwindingsstate">
+       <value>N</value>
+     </textarea>
+   </state>
+   <state name="no">
+     <area>0,0,100%,100%</area>
+     <textarea name="eye" from="basicwindingsstate">
+       <alpha>50</alpha>
+       <value>N</value>
+     </textarea>
+   </state>
+ </statetype>
+ 
+ <textarea name="basicchannels">
+   <font>menufontverysmall</font>
+   <area>0,0,50,50</area>    
+   <align>allcenter</align>    
+ </textarea>  
+ 
+ <!--  The type of sound in the recording  -->  
+ <statetype name="basicaudioprops">
+   <area>0,0,100%,100%</area>
+   <state name="mono">
+     <area>0,0,100%,100%</area>
+     <textarea name="speaker" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+     <textarea name="channels" from="basicchannels">
+       <value>1</value>
+     </textarea>
+   </state>
+   <state name="stereo">
+     <textarea name="speaker" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+     <textarea name="channels" from="basicchannels">
+       <value>2</value>
+     </textarea>
+   </state>
+   <state name="surround">
+     <textarea name="speaker" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+     <textarea name="channels" from="basicchannels">
+       <value>5.1</value>
+     </textarea>
+   </state>
+   <state name="dolby">
+     <textarea name="speaker" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+     <textarea name="channels" from="basicchannels">
+       <value>DD</value>
+     </textarea>
+   </state>
+   <state name="default">
+     <textarea name="speaker" from="basicwindingsstate">
+       <alpha>50</alpha>
+       <value></value>
+     </textarea>
+   </state>
+ </statetype>
+ 
+ 
+ <textarea name="basicsubtitles" from="basicchannels">
+   <area>0,0,50,40</area>    
+ </textarea>  
+ <!--  icon if a recording will be deleted when needed	  -->  
+ <statetype name="basicsubtitletypes">
+   <state name="cc">
+     <textarea name="bubble" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+     <textarea name="type" from="basicsubtitles">
+       <value>CC</value>
+     </textarea>
+   </state>
+   <state name="subtitles">
+     <textarea name="bubble" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+   </state>
+   <state name="onscreensubs">
+     <textarea name="bubble" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+     <textarea name="type" from="basicsubtitles">
+       <value>!!!</value>
+     </textarea>
+   </state>
+   <state name="default">
+     <textarea name="bubble" from="basicwindingsstate">
+       <alpha>50</alpha>
+       <value></value>
+     </textarea>
+   </state>
+ </statetype>
+ 
+ <textarea name="basicvideo" from="basicchannels">
+   <area>0,3,50,50</area>
+   <align>bottom,hcenter</align>
+   <font>menufontverrysmallblack</font>
+ </textarea>  
+ 
+ <!--  The type of sound in the recording  -->  
+ <statetype name="basicvideoprops">
+   <state name="hdtv">
+     <textarea name="film" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+     <textarea name="type" from="basicvideo">
+       <value>HDTV</value>
+     </textarea>
+   </state>
+   <state name="widescreen">
+     <textarea name="film" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+     <textarea name="type" from="basicvideo">
+       <value>wide</value>
+     </textarea>
+   </state>
+   <state name="avchd">
+     <textarea name="film" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+     <textarea name="type" from="basicvideo">
+       <value>avchd</value>
+     </textarea>
+   </state>
+   <state name="hd720">
+     <textarea name="film" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+     <textarea name="type" from="basicvideo">
+       <value>720</value>
+     </textarea>
+   </state>
+   <state name="hd1080">
+     <textarea name="film" from="basicwindingsstate">
+       <value></value>
+     </textarea>
+     <textarea name="type" from="basicvideo">
+       <value>1080</value>
+     </textarea>
+   </state>
+   <state name="default">
+     <textarea name="film" from="basicwindingsstate">
+       <value></value>
+       <alpha>50</alpha>
+     </textarea>
+   </state>
+ </statetype>
+ 
+ 
+ <!-- end of all states-->
+ 
+ <!-- Round please Wait pie -->
+ 
+ <window name="MythBusyDialog">
+   <area>-1,-1,800,260</area>
+   <shape name="popupbg">
+     <area>0,0,800,260</area>
+     <fill color="#b3b3b3" alpha="200" />
+   </shape>
+   <shape name="popupbg2">
+     <area>5,5,790,250</area>
+     <fill color="#ffffff" alpha="200" />
+   </shape>
+   <textarea name="message" from="basicmessagearea">
+     <font>progressfont</font>
+   </textarea>
+ </window>
+ 
+ 
+ <window name="MythProgressDialog">
+   <area>-1,-1,800,260</area>
+   <shape name="popupbg">
+     <area>0,0,800,260</area>
+     <fill color="#b3b3b3" alpha="200" />
+   </shape>
+   <shape name="popupbg2">
+     <area>5,5,790,250</area>
+     <fill color="#ffffff" alpha="200" />
+   </shape>
+   <textarea name="message" from="basicmessagearea">
+     <font>progressfont</font>
+   </textarea>
+   <progressbar name="progressbar" from="basicprogressbar">
+     <position>0,2</position>
+   </progressbar>
+   
+   <textarea name="progresstext" >
+     <area>0,0,1670,50</area>
+     <font>progressfont</font>
+     <template>%DESCRIPTION% %VALUE%%UNITS%</template>
+     <align>center,bottom</align>
+   </textarea>
+ </window>
+ 
+ <window name="videowindow">
+   <area>-1,-1,800,260</area>
+   <shape name="popupbg">
+     <area>0,0,800,260</area>
+     <fill color="#b3b3b3" alpha="200" />
+   </shape>
+   <shape name="popupbg2">
+     <area>5,5,790,250</area>
+     <fill color="#ffffff" alpha="200" />
+   </shape>
+   <textarea name="title" from="basicmessagearea">
+     <font>progressfont</font>
+     <value>Playback starting ...</value>
+   </textarea>
+ </window>
+ 
+ 
+ <!--Checkboxes -->
+ 
+ <checkbox name="basiccheckbox">
+   
+   <area>0,0,50,50</area>
+   <statetype name="background">
+     <loadondemand>true</loadondemand>            
+     <state name="active">
+       <area>0,0,100%,100%</area>
+       <shape name="buttonbg1">
+	 <area>0,0,100%,100%</area>
+	 <fill color="#b3b3b3" alpha="200" />
+       </shape>
+       <shape name="buttonbg2">
+	 <area>5,5,40,40</area>
+	 <fill color="#ffffff" alpha="200" />
+       </shape>
+     </state>
+     
+     <state name="selected">
+       <area>0,0,100%,100%</area>
+       <shape name="background">
+	 <area>0,0,100%,100%</area>
+	 <fill color="#b3b3b3" alpha="200" />
+       </shape>
+     </state>
+     <state name="inactive" from="active">
+       <shape name="buttonbg1">
+	 <alpha>100</alpha>
+       </shape>
+       <shape name="buttonbg2">
+	 <alpha>100</alpha>
+       </shape>
+     </state>
+     
+     <state name="disabled" />
+   </statetype>
+   
+   <statetype name="checkstate">
+     <area>0,0,100%,100%</area>
+     <state type="off" />
+     
+     <state type="half">
+       <area>0,0,100%,100%</area>
+       <textarea name="check" from="basicwindingsstate">
+	 <value>a</value>
+	 <alpha>180</alpha>
+       </textarea>
+     </state>
+     <state type="full">
+       <area>0,0,100%,100%</area>
+       <textarea name="check" from="basicwindingsstate">
+	 <value>a</value>
+       </textarea>
+     </state>
+     
+   </statetype>
+ </checkbox>
+ 
+ 
   
 </mythuitheme>
