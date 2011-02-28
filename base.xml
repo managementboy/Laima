@@ -4,12 +4,12 @@
   <!-- Font Definitions for main menu -->
   <fontdef name="menufont" face="DejaVu Sans">
     <pixelsize>90</pixelsize>
-    <color>#f2f2f2</color>
+    <color>#ffffff</color>
   </fontdef>
   
   <fontdef name="menuunselected" face="DejaVu Sans">
     <pixelsize>65</pixelsize>
-    <color>#b3b3b3</color>
+    <color>#808080</color>
   </fontdef>
   
   <fontdef name="menufontmedium" from="menufont">
@@ -17,7 +17,7 @@
   </fontdef>
   
   <fontdef name="menufontmediumunselected" from="menufontmedium">
-    <color>#b3b3b3</color>
+    <color>#808080</color>
   </fontdef>
   
   <fontdef name="menufontsmall" from="menufont">
@@ -25,7 +25,7 @@
   </fontdef>
   
   <fontdef name="menufontsmallunselected" from="menufontsmall">
-    <color>#b3b3b3</color>
+    <color>#808080</color>
   </fontdef>
   
   <fontdef name="menufontverysmall" from="menufontsmall">
@@ -33,7 +33,7 @@
   </fontdef>
   
   <fontdef name="menufontverysmallunselected" from="menufontverysmall">
-    <color>#b3b3b3</color>
+    <color>#808080</color>
   </fontdef>
   
   <fontdef name="menufontverrysmallblack" from="menufontverysmall">
@@ -41,13 +41,13 @@
   </fontdef>
   
   <fontdef name="progressfont" from="menufontmedium">
-    <color>#535d6c</color>
+    <color>#666666</color>
   </fontdef>
   
   <!-- Font Definitions for everyting else -->
   <fontdef name="basic" face="DejaVu Sans">
     <pixelsize>40</pixelsize>
-    <color>#b3b3b3</color>
+    <color>#808080</color>
   </fontdef>
   
   <fontdef name="basicwhite" from="basic">
@@ -56,16 +56,16 @@
   
   <fontdef name="basicdescription" face="DejaVu Sans">
     <pixelsize>22</pixelsize>
-    <color>#f2f2f2</color>
+    <color>#ffffff</color>
   </fontdef>
   
   <fontdef name="basicdescriptionunselected" from="basicdescription">
-    <color>#b3b3b3</color>
+    <color>#808080</color>
   </fontdef>
   
   <fontdef name="windings" face="Webdings">
     <pixelsize>50</pixelsize>
-    <color>#b3b3b3</color>
+    <color>#808080</color>
   </fontdef>
   
   <fontdef name="windingsunselected" from="windings">
@@ -85,7 +85,12 @@
     <pixelsize>50</pixelsize>
     <color>#000000</color>
   </fontdef>
-  
+
+ <fontdef name="hugeicons" face="DejaVu Sans">
+   <pixelsize>200</pixelsize>
+   <color>#ffffff</color>
+ </fontdef>
+
   <!--background without any widgets -->
   <imagetype name="basicbackground">
     <area>0,0,1680,1050</area>
@@ -96,7 +101,7 @@
   
   <clock name="basicclock">
     <area>800,950,870,100</area>
-    <font>menufontmediumunselected</font>
+    <font>basicdescriptionunselected</font>
     <align>right,bottom</align>
     <alpha>255</alpha>
   </clock>
@@ -120,7 +125,7 @@
   </textarea>
   
   <textarea name="basicbuttontext">
-    <area>5,0,100%,100</area> 
+    <area>5,0,100%,100</area>
     <font>menuunselected</font>
     <case>upper</case>
     <align>vcenter</align>
@@ -147,7 +152,7 @@
 	
 	<shape name="background">
 	  <area>0,0,100%,150</area>
-	  <fill color="#b3b3b3" alpha="255" />
+	  <fill color="#808080" alpha="255" />
 	</shape>
 	
 	<textarea name="buttontext" from="basicbuttontext">
@@ -211,7 +216,7 @@
 	<area>0,0,220,50</area>
 	<shape name="buttonbg1">
 	  <area>0,0,220,50</area>
-	  <fill color="#b3b3b3" alpha="200" />
+	  <fill color="#808080" alpha="200" />
 	</shape>
 	<shape name="buttonbg2">
 	  <area>5,5,210,40</area>
@@ -226,7 +231,7 @@
 	<area>0,0,760,50</area>
 	<shape name="background">
 	  <area>0,0,760,50</area>
-	  <fill color="#b3b3b3" alpha="200" />
+	  <fill color="#808080" alpha="200" />
 	</shape>
 	<textarea name="buttontext" from="basicbuttontextarea">
 	  <font>basicwhite</font>
@@ -278,7 +283,7 @@
 	<area>0,0,300,300</area>
 	<shape name="buttonbg1">
 	  <area>0,0,300,300</area>
-	  <fill color="#b3b3b3" alpha="200" />
+	  <fill color="#808080" alpha="200" />
 	</shape>
 	<shape name="buttonbg2">
 	  <area>5,5,390,390</area>
@@ -293,7 +298,7 @@
 	
 	<shape name="background">
 	  <area>0,250,300,50</area>
-	  <fill color="#b3b3b3" alpha="50" />
+	  <fill color="#808080" alpha="50" />
 	</shape>	
 	<textarea name="buttontext" from="basicgallerytextarea"/>
 	<textarea name="childcount" from="basicgallerytextarea">
@@ -319,7 +324,7 @@
 	<area>0,0,300,300</area>
 	<shape name="background">
 	  <area>0,0,300,300</area>
-	  <fill color="#b3b3b3" alpha="200" />
+	  <fill color="#808080" alpha="200" />
 	</shape>
 	
 	<imagetype name="buttonimage">
@@ -331,7 +336,7 @@
 	
 	<shape name="background">
 	  <area>0,250,300,50</area>
-	  <fill color="#b3b3b3" alpha="50" />
+	  <fill color="#808080" alpha="50" />
 	</shape>	
 	<textarea name="buttontext" from="basicgallerytextarea">
 	  <font>basicwhite</font>
@@ -410,7 +415,7 @@
        <area>0,0,760,50</area>
        <shape name="buttonbg1">
 	 <area>0,0,760,50</area>
-	 <fill color="#b3b3b3" alpha="200" />
+	 <fill color="#808080" alpha="200" />
        </shape>
        <shape name="buttonbg2">
 	 <area>5,5,750,40</area>
@@ -427,7 +432,7 @@
        <area>0,0,760,50</area>
        <shape name="background">
 	 <area>0,0,760,50</area>
-	 <fill color="#b3b3b3" alpha="200" />
+	 <fill color="#808080" alpha="200" />
        </shape>
        <textarea name="buttontext" from="basicbuttontextarea">
 	 <font>basicwhite</font>
@@ -481,7 +486,7 @@
        <area>0,0,760,50</area>
        <shape name="buttonbg1">
 	 <area>0,0,760,50</area>
-	 <fill color="#b3b3b3" alpha="200" />
+	 <fill color="#808080" alpha="200" />
        </shape>
        <shape name="buttonbg2">
 	 <area>5,5,750,40</area>
@@ -498,7 +503,7 @@
        <area>0,0,760,50</area>
        <shape name="background">
 	 <area>0,0,760,50</area>
-	 <fill color="#b3b3b3" alpha="200" />
+	 <fill color="#808080" alpha="200" />
        </shape>
        <textarea name="text" from="basicbuttontextarea">
 	 <font>basicwhite</font>
@@ -511,7 +516,7 @@
      <state name="pushed" from="selected">
        <area>0,0,760,50</area>
        <shape name="background">
-	 <fill color="#b3b3b3" alpha="255" />
+	 <fill color="#808080" alpha="255" />
        </shape>
      </state>
      
@@ -571,7 +576,7 @@
    <area>-1,-1,800,800</area>
    <shape name="popupbg">
      <area>0,0,800,800</area>
-     <fill color="#b3b3b3" alpha="230" />
+     <fill color="#808080" alpha="230" />
    </shape>
    <shape name="popupbg2">
      <area>5,5,790,790</area>
@@ -737,12 +742,12 @@
    
    <shape name="background">
      <area>0,0,100%,100%</area>
-     <fill color="#b3b3b3" alpha="230" />
+     <fill color="#ffffff" alpha="220" />
    </shape>
    
    <shape name="progressimage">
      <area>0,0,100%,100%</area>
-     <fill color="#ffffff" alpha="200" />
+     <fill color="#ffffff" alpha="255" />
    </shape>
  </progressbar>
  
@@ -1063,7 +1068,7 @@
    <area>-1,-1,800,260</area>
    <shape name="popupbg">
      <area>0,0,800,260</area>
-     <fill color="#b3b3b3" alpha="200" />
+     <fill color="#808080" alpha="200" />
    </shape>
    <shape name="popupbg2">
      <area>5,5,790,250</area>
@@ -1079,7 +1084,7 @@
    <area>-1,-1,800,260</area>
    <shape name="popupbg">
      <area>0,0,800,260</area>
-     <fill color="#b3b3b3" alpha="200" />
+     <fill color="#808080" alpha="200" />
    </shape>
    <shape name="popupbg2">
      <area>5,5,790,250</area>
@@ -1104,7 +1109,7 @@
    <area>-1,-1,800,260</area>
    <shape name="popupbg">
      <area>0,0,800,260</area>
-     <fill color="#b3b3b3" alpha="200" />
+     <fill color="#808080" alpha="200" />
    </shape>
    <shape name="popupbg2">
      <area>5,5,790,250</area>
@@ -1128,7 +1133,7 @@
        <area>0,0,100%,100%</area>
        <shape name="buttonbg1">
 	 <area>0,0,100%,100%</area>
-	 <fill color="#b3b3b3" alpha="200" />
+	 <fill color="#808080" alpha="200" />
        </shape>
        <shape name="buttonbg2">
 	 <area>5,5,40,40</area>
@@ -1140,7 +1145,7 @@
        <area>0,0,100%,100%</area>
        <shape name="background">
 	 <area>0,0,100%,100%</area>
-	 <fill color="#b3b3b3" alpha="200" />
+	 <fill color="#808080" alpha="200" />
        </shape>
      </state>
      <state name="inactive" from="active">
@@ -1176,6 +1181,7 @@
    </statetype>
  </checkbox>
  
- 
-  
+
+
+
 </mythuitheme>

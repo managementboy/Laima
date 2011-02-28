@@ -4,9 +4,25 @@
   <!--  This XML file defines the Window that enables the user to watch a recorded program.-->
   <window name="watchrecordings">
 
+ <!-- Fanart behind the recordings  (remove it if you don't want it!)  -->   
+ <imagetype name="fanart">
+   <area>0,100,1680,850</area>
+   <crop>0,55,1680,850</crop>
+   <filename />
+   <alpha>30</alpha>
+   <grayscale>true</grayscale>
+ </imagetype>
+
+ <progressbar name="position" from="basicprogressbar">
+   <area>0,1025,1680,25</area>
+ </progressbar>
+ 
+ <!--  Clock and Date on the lower right       -->
+ <clock name="clock" from="basicclock" />   
+
     <!-- shows the groups  -->
     <buttonlist name="groups" from="basichorizontallist">
-      <position>0,25</position>
+      <position>0,35</position>
     </buttonlist>
     
     <!-- shows the recordings -->
@@ -14,7 +30,6 @@
       <area>0,100,100%,850</area>
       
       <statetype name="buttonitem">
-	
 	<state name="active">
 	  <!--  icon if a recording is marked preserved	  -->  
 	  <statetype name="playlist">
@@ -45,6 +60,7 @@
 	  <!--  The little screenshot/preview of the recording -->
 	  <imagetype name="preview">
 	    <area>1515,5,160,90</area>
+            <preserveaspect>true</preserveaspect>
 	  </imagetype>
 	  
 	  <statetype name="ratingstate" from="baserating">
@@ -70,7 +86,7 @@
 	    <position>1000,50</position>
 	  </statetype>
 	  
-	  	  <statetype name="cutlist" from="basiccutliststate">
+	  <statetype name="cutlist" from="basiccutliststate">
 	    <position>1050,50</position>
 	  </statetype>
 
@@ -114,7 +130,7 @@
 	  <area>0,0,100%,150</area>
 	  <shape name="background">
 	    <area>0,0,100%,150</area>
-	    <fill color="#b3b3b3" alpha="200" />
+	    <fill color="#b3b3b3" alpha="255" />
 	  </shape>
 	  
 	  <!--  icon if a recording is marked preserved	  -->  
@@ -129,22 +145,34 @@
 	  </statetype>
 	  
 	  <textarea name="title" from="basicbuttontext">
-	    <area>5,0,870,120</area>
+	    <area>5,0,870,60</area>
 	    <font>menufontmedium</font>
 	    <multiline>yes</multiline>
 	    <align>left</align>
 	  </textarea>
-	  
+
+ <textarea name="timedate">
+   <area>5,50,870,40</area>
+   <font>basicdescription</font>
+   <cutdown>yes</cutdown> 
+ </textarea>
+
+ <textarea name="longchannel" from="timedate">
+   <area>5,80,870,40</area>
+ </textarea>
+ 
+ 
+
 	  <textarea name="subtitle">
 	    <area>5,110,870,40</area>
-	    <font>menufontsmall</font>
-	    <cutdown>yes</cutdown> 
-	    <multiline>yes</multiline>
+            <font>menufontsmall</font>
+   <cutdown>yes</cutdown> 
 	  </textarea>
 	  
 	  <!--  The little screenshot/preview of the recording -->
 	  <imagetype name="preview">
 	    <area>1515,5,160,90</area>
+            <preserveaspect>true</preserveaspect>
 	  </imagetype>
 	  <statetype name="ratingstate" from="baserating">
 	    <position>1515,5</position>
@@ -208,11 +236,12 @@
 
 	 <!-- Filesize --> 
 	<textarea name="filesize_str">
-	    <area>1470,100,200,45</area>
+	    <area>1470,110,200,40</area>
 	        <font>menufontsmall</font>
 	    <align>right,bottom</align>
 	</textarea>
-	  
+            
+        
 	</state>
 	
 	<state name="inactive" from="active">
@@ -236,16 +265,10 @@
     
     <!-- shows the recording groups  -->
     <buttonlist name="recgroups" from="basichorizontallist">
-      <position>0,975</position>
+      <position>0,965</position>
     </buttonlist>
-    
-    
-    <!--  Clock and Date on the lower right	  
-      <clock name="clock" from="basicclock" />   
-      
-      <textarea name="pagetitle" from="basictitle">
-	<value>Watch Recordings</value>
-      </textarea>-->
+        
+
       
     </window>
     <window name="groupselector">
