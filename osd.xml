@@ -4,16 +4,15 @@
   <!-- here you will find the OSD of the Laima Theme-->
   <!-- The popup/notification text area. -->
   <window name="osd_message">
-    <area>0,0,1680,1050</area>
+    <area>0,950,1680,50</area>
     <shape name="background">
-      <area>0,0,100%,100</area>
-      <fill color="#ffffff" alpha="200" />
+      <area>0,0,100%,50</area>
+      <fill color="#ffffff" alpha="220" />
     </shape>
     <textarea name="message_text" from="basicbuttontext">
-      <area>5,5,90%,100</area>
-      <font>menufontmedium</font>
-      <multiline>yes</multiline>
-      <align>left</align>
+      <area>0,0,1680,55</area>
+      <font>progressfont</font>
+      <align>hcenter</align>
     </textarea>
   </window>
   
@@ -21,13 +20,12 @@
   <window name="osd_input">
     <area>0,0,1680,1050</area>
     <shape name="background">
-      <area>0,0,100%,100</area>
-      <fill color="#ffffff" alpha="200" />
+      <area>0,0,100%,50</area>
+      <fill color="#ffffff" alpha="220" />
     </shape>
     <textarea name="osd_number_entry" from="basicbuttontext">
-      <area>5,5,90%,100</area>
-      <font>menufontmedium</font>
-      <multiline>yes</multiline>
+      <area>5,0,90%,55</area>
+      <font>progressfont</font>
       <align>left</align>
     </textarea>
   </window>
@@ -36,12 +34,12 @@
     <area>0,900,1680,1050</area>
     <shape name="background">
       <area>0,0,1680,150</area>
-      <fill color="#b3b3b3" alpha="200" />
+      <fill color="#b3b3b3" alpha="220" />
     </shape>
     
     <textarea name="title" from="basicbuttontext">
       <area>5,5,870,120</area>
-      <font>menufontmedium</font>
+      <font>progressfont</font>
       <multiline>yes</multiline>
       <align>left</align>
     </textarea>
@@ -56,6 +54,7 @@
     <!--  The little screenshot/preview of the recording -->
     <imagetype name="iconpath">
       <area>1515,5,140,140</area>
+      <preserveaspect>true</preserveaspect>
     </imagetype>
     
     <!--  The description field, that in this case fuses subtitle + rating + description into one -->
@@ -70,13 +69,12 @@
   
   <!--  the progressbar of the current show -->
   <window name="osd_status">
-    <area>0,950,1680,100</area>
+    <area>0,1000,1680,100</area>
     <progressbar name="position" from="basicprogressbar">
-      <position>0,2</position>
     </progressbar>
     
     <clock name="clock">
-      <area>10,0,1670,50</area>
+      <area>5,0,1675,50</area>
       <font>progressfont</font>
       <format>%TIME%</format>
     </clock>
@@ -85,9 +83,94 @@
       <area>0,0,1680,50</area>
       <font>progressfont</font>
       <template>%DESCRIPTION% %VALUE%%UNITS%</template>
-      <align>center</align>
+      <align>hcenter</align>
     </textarea>
+    
+    <textarea name="title">
+      <area>0,0,1675,50</area>
+      <font>progressfont</font>
+      <align>right</align>
+    </textarea>
+    
   </window>
+  
+  <window name="osd_program_editor">
+    <area>0,0,1680,1050</area>
+    
+    <shape name="background">
+      <area>0,0,1680,50</area>
+      <fill color="#ffffff" alpha="220" />
+    </shape>
+
+    
+ <textarea name="seekamount" from="basicbuttontext">
+      <area>5,0,1675,55</area>
+      <font>progressfont</font>
+      <multiline>yes</multiline>
+      <align>left</align>
+    </textarea>
+
+
+   <textarea name="framedisplay" from="basicbuttontext">
+     <area>0,0,1675,55</area>
+   <font>progressfont</font>
+   <multiline>yes</multiline>
+   <align>right</align>
+ </textarea>  
+ 
+ <textarea name="timedisplay" from="basicbuttontext">
+      <font>progressfont</font>
+      <area>0,0,1675,55</area>
+      <align>hcenter</align>
+    </textarea>
+
+ <textarea name="zizors" from="basicicons">
+   <area>0,886,1680,200</area>
+   <value>✁</value>
+   <font>hugeicons</font>
+   <align>bottom</align>
+ </textarea>    
+ 
+    <shape name="backgroundbottom">
+      <area>0,1000,1680,50</area>
+      <fill color="#ffffff" alpha="220" />
+    </shape>
+
+    <editbar name="editbar">
+      <area>0,995,1680,55</area>
+      <shape name="cut">
+        <area>0,5,100%,100%</area>
+        <fill color="#666666" alpha="255" />
+      </shape>
+      <shape name="keep">
+        <area>0,10,100%,40</area>
+        <fill color="#ffffff" alpha="255" />
+      </shape>
+      <shape name="cuttoright">
+        <area>0,0,2,100%</area>
+        <fill color="#ffffff" alpha="200" />
+      </shape>
+      <shape name="cuttoleft">
+        <area>0,0,2,100%</area>
+        <fill color="#ffffff" alpha="200" />
+      </shape>
+      <shape name="keeptoright">
+        <area>0,0,3,100%</area>
+        <fill color="#666666" alpha="255" />
+      </shape>
+      <shape name="keeptoleft">
+        <area>0,0,3,100%</area>
+        <fill color="#666666" alpha="255" />
+      </shape>
+
+      <shape name="position">
+        <area>0,0,5,100%</area>
+        <fill color="#ffcc00" alpha="255" />
+      </shape>
+    </editbar>
+  </window>
+  
+  
   
   <!-- the Menu -->
   <window name="MythPopupBox">
