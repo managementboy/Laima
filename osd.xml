@@ -38,9 +38,8 @@
     </shape>
     
     <textarea name="title" from="basicbuttontext">
-      <area>5,5,870,120</area>
-      <font>progressfont</font>
-      <multiline>yes</multiline>
+      <area>5,0,870,60</area>
+      <font>menufontmedium</font>
       <align>left</align>
     </textarea>
     
@@ -56,7 +55,17 @@
       <area>1515,5,140,140</area>
       <preserveaspect>true</preserveaspect>
     </imagetype>
+
+    <textarea name="timedate">
+      <area>5,50,870,40</area>
+      <font>basicdescription</font>
+      <cutdown>yes</cutdown> 
+    </textarea>
     
+    <textarea name="longchannel" from="timedate">
+      <area>5,80,870,40</area>
+    </textarea>
+
     <!--  The description field, that in this case fuses subtitle + rating + description into one -->
     <textarea name="description">
       <font>basicdescription</font>
@@ -101,41 +110,41 @@
       <area>0,0,1680,50</area>
       <fill color="#ffffff" alpha="220" />
     </shape>
-
     
- <textarea name="seekamount" from="basicbuttontext">
+    
+    <textarea name="seekamount" from="basicbuttontext">
       <area>5,0,1675,55</area>
       <font>progressfont</font>
       <multiline>yes</multiline>
       <align>left</align>
     </textarea>
-
-
-   <textarea name="framedisplay" from="basicbuttontext">
-     <area>0,0,1675,55</area>
-   <font>progressfont</font>
-   <multiline>yes</multiline>
-   <align>right</align>
- </textarea>  
- 
- <textarea name="timedisplay" from="basicbuttontext">
+    
+    
+    <textarea name="framedisplay" from="basicbuttontext">
+      <area>0,0,1675,55</area>
+      <font>progressfont</font>
+      <multiline>yes</multiline>
+      <align>right</align>
+    </textarea>  
+    
+    <textarea name="timedisplay" from="basicbuttontext">
       <font>progressfont</font>
       <area>0,0,1675,55</area>
       <align>hcenter</align>
     </textarea>
-
- <textarea name="zizors" from="basicicons">
-   <area>0,886,1680,200</area>
-   <value>✁</value>
-   <font>hugeicons</font>
-   <align>bottom</align>
- </textarea>    
- 
+    
+    <textarea name="zizors" from="basicicons">
+      <area>0,886,1680,200</area>
+      <value>✁</value>
+      <font>hugeicons</font>
+      <align>bottom</align>
+    </textarea>    
+    
     <shape name="backgroundbottom">
       <area>0,1000,1680,50</area>
       <fill color="#ffffff" alpha="220" />
     </shape>
-
+    
     <editbar name="editbar">
       <area>0,995,1680,55</area>
       <shape name="cut">
@@ -162,28 +171,19 @@
         <area>0,0,3,100%</area>
         <fill color="#666666" alpha="255" />
       </shape>
-
       <shape name="position">
         <area>0,0,5,100%</area>
         <fill color="#ffcc00" alpha="255" />
       </shape>
     </editbar>
   </window>
-  
-  
-  
+    
   <!-- the Menu -->
   <window name="MythPopupBox">
-    <area>-1,-1,800,800</area>
-    <shape name="popupbg">
-      <area>0,0,800,800</area>
-      <fill color="#b3b3b3" alpha="230" />
-    </shape>
-    <shape name="popupbg2">
-      <area>5,5,790,790</area>
-      <fill color="#ffffff" alpha="230" />
-    </shape>
-    <textarea name="messagearea" from="basicmessagearea" />
+    <area>10,250,760,500</area>
+    <textarea name="messagearea" from="basicmessagearea">
+      <alpha>0</alpha>
+    </textarea>
     <buttonlist name="list" from="basicpopuplist" />
   </window>
 </mythuitheme>
