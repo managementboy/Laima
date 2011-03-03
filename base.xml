@@ -1083,7 +1083,7 @@
       </textarea>
     </state>
   </statetype>
-
+  
   <!--  icon if a recording is marked preserved	  -->  
   <statetype name="basicwatchedstate">
     <area>0,0,100%,100%</area>
@@ -1305,4 +1305,5 @@
     </statetype>
   </checkbox>
   
-  
+
+ </mythuitheme>
